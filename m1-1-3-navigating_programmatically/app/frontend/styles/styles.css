@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'Titillium Web';
-  src: url('./font.ttf');
+  src: url('../fonts/TitilliumWeb-SemiBold.ttf');
+  font-display: swap;
 }
 
 body {
@@ -9,8 +10,7 @@ body {
 }
 
 #root,
-body,
-main {
+body {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,7 +19,6 @@ main {
 h1,
 h2 {
   color: #93005a;
-  margin-bottom: 1rem;
 }
 
 #root {
@@ -28,23 +27,18 @@ h2 {
   border-top: 1px solid grey;
   border-bottom: 1px solid grey;
   padding-top: 2rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 }
 
-button {
-  background-color: #e6e6e6;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  padding: 0.8rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1em;
-}
-
-.emoji {
-  font-size: 12em;
-}
-
+header,
 footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 1rem;
+}
+
+footer>a {
+  font-size: 0.85em;
+  color: #ff4b00;
 }
