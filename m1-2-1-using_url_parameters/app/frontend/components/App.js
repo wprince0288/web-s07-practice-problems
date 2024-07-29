@@ -28,7 +28,6 @@ export default function App() {
       <Routes>
         {/* 1- create your Route here */}
       </Routes>
-      <footer>Find the solution inside AppSolution.js</footer>
     </div>
   )
 }

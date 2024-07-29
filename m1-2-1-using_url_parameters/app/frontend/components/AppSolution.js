@@ -30,7 +30,6 @@ export default function App() {
         {/* 1- create your Route here */}
         <Route path="/:color" element={<Color />} />
       </Routes>
-      <footer>Find the solution inside AppSolution.js</footer>
     </div>
   )
 }

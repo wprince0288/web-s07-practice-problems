@@ -26,7 +26,6 @@ export default function App() {
         <Route path="careers" element={<Careers />} />
         <Route path="blog" element={<Blog />} />
       </Routes>
-      <footer>Find the solution inside AppSolution.js</footer>
     </div>
   )
 }
