@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Submitting a Form</title>
+  <title>Submitting a Form Solution</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/reset.css" />
   <link rel="stylesheet" href="./styles/index.css" />
@@ -16,41 +16,40 @@
   <div id="root"></div>
   <script type="text/babel">
     const { useState } = React
-    // PROBLEM 1 - Wire the `submit` function to an `onSubmit` prop of the <form> element
-
-    // PROBLEM 2 - Inside `submit`, prevent the default behavior of page reload on submit
-
-    // PROBLEM 3 - Inside `submit`, declare a variable containing an object { username, password } and log the variable to the console
-
     function App() {
       let [username, setUsername] = useState('')
       let [password, setPassword] = useState('')
       const submit = event => {
         // implement
+        event.preventDefault()
+        const payload = { username, password }
+        console.log(payload)
       }
       return (
-        <form>{/* this form needs its onSubmit prop */}
+        <form onSubmit={submit}>{/* this form needs its onSubmit prop */}
           <div>
             <label htmlFor="fname">Username </label><br />
             <input
+              onChange={e => setUsername(e.target.value)}
               id="fname"
               type="text"
-              maxLength={10}
               placeholder="Type Username"
-              onChange={e => setUsername(e.target.value)}
+              maxLength={10}
             /><br />
           </div>
           <div>
             <label htmlFor="password">Password </label><br />
             <input
+              onChange={e => setPassword(e.target.value)}
               id="lname"
               type="password"
-              minLength={8}
               placeholder="Type password"
-              onChange={e => setPassword(e.target.value)}
+              minLength={8}
             /><br />
           </div>
-          <input type="submit" />
+          <div>
+            <input type="submit" />
+          </div>
         </form>
       )
     }
