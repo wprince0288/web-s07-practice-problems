@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Dropdowns and Checkboxes</title>
+  <title>Dropdowns and Checkboxes Solution</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/reset.css" />
   <link rel="stylesheet" href="./styles/index.css" />
@@ -16,14 +16,6 @@
   <div id="root"></div>
   <script type="text/babel">
     const { useState } = React
-    // PROBLEM 1 - The dropdown is missing some props: `name`, `onChange` and `value`. Fix it!
-
-    // PROBLEM 2 - The radio buttons are missing some props: `name`, `onChange` and `checked`. Fix them!
-
-    // PROBLEM 3 - The checkbox input is missing some props: `name`, `onChange` and `checked`. Fix it!
-
-    // PROBLEM 4 - Test out your form. If you solved problems 1, 2 and 3 correctly, the form should work normally, and clicking submit should print to the console an object similar to: {favorite_food: "pizza", favorite_library: "react", is_having_fun: "for sure"}.
-
     function App() {
       let [values, setValues] = useState({ food: '', lib: '', fun: false })
       const onSubmit = event => {
@@ -44,8 +36,8 @@
       return (
         <form onSubmit={onSubmit}>
           <div>
-            {/* 1- the select is missing some props */}
-            <label>Food <select>
+            {/* 1- the dropdown is missing some props */}
+            <label>Food <select name="food" onChange={onChange} value={values.food}>
               <option value="">--Select Food--</option>
               <option value="pizza">Pizza</option>
               <option value="broccoli">Broccoli</option>
@@ -53,22 +45,31 @@
             </label>
           </div>
           <div>
-            {/* 2- the radio inputs are missing some props */}
+            {/* 2- the radio buttons are missing some props */}
             <label>ReactJS <input
+              checked={values.lib === 'react'}
+              name="lib"
               value="react"
               type="radio"
+              onChange={onChange}
             />
             </label>
             <label>SvelteJS <input
+              checked={values.lib === 'svelte'}
+              name="lib"
               value="svelte"
               type="radio"
+              onChange={onChange}
             />
             </label>
           </div>
           <div>
-            {/* 3- the checkbox input is missing some props */}
+            {/* 3- the checkbox is missing some props */}
             <label>Having fun <input
+              checked={values.fun}
+              name="fun"
               type="checkbox"
+              onChange={onChange}
             /></label>
           </div>
           <input type="submit" />
