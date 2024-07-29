@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Submitting to the Server</title>
+  <title>Submitting to the Server Solution</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/reset.css" />
   <link rel="stylesheet" href="./styles/index.css" />
@@ -17,30 +17,22 @@
   <div id="root"></div>
   <script type="text/babel">
     const { useState } = React
-    // PROBLEM 1 - The submit handler is very broken! Please fix it.
-
     function App() {
       const [values, setValues] = useState({ username: '', password: '' })
       const [success, setSuccess] = useState('')
       const [failure, setFailure] = useState('')
-
       const onSubmit = event => {
-        /*
-         1- The following lines are out of order! Order them correctly and un-comment them. Test that the success and failure messages from the server render on the page.
-        */
-
-        // setSuccess(res.data.message)
-        // event.preventDefault()
-        // .then(res => {
-        // axios.post('https://webapis.bloomtechdev.com/cranky_login', values)
-        // setFailure(err.response.data.message)
-        // })
-        // console.log(values)
-        // setFailure('')
-        // .catch(err => {
-        // })
-        // setSuccess('')
-
+        event.preventDefault()
+        console.log(values)
+        axios.post('https://webapis.bloomtechdev.com/cranky_login', values)
+          .then(res => {
+            setSuccess(res.data.message)
+            setFailure('')
+          })
+          .catch(err => {
+            setFailure(err.response.data.message)
+            setSuccess('')
+          })
       }
       const onChange = event => {
         const { id, value } = event.target
@@ -69,7 +61,6 @@
             </label>
           </div>
           <input type="submit" />
-          <p>Check the solution in App(solution).jsx</p>
         </form>
       )
     }

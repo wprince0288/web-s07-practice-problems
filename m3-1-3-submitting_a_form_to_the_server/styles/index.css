@@ -1,0 +1,77 @@
+@font-face {
+  font-family: 'Titillium Web';
+  src: url('./font.ttf');
+}
+
+body {
+  font-family: 'Titillium Web', sans-serif;
+  border: 1rem solid #ff4b00;
+}
+
+#root,
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#root {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+input[type=submit] {
+  border: 1px solid lightcoral;
+  background-color: white;
+  color: #ff4b00;
+  width: 100%
+}
+
+input[type=submit] {
+  border-width: 2px;
+}
+
+input[disabled] {
+  color: grey;
+  border-color: grey;
+  cursor: not-allowed;
+}
+
+form div {
+  margin-bottom: 0.7rem;
+}
+
+form div:last-child {
+  justify-content: flex-end;
+}
+
+input,
+textarea {
+  padding: 0.5rem;
+  width: 220px;
+  border: 1px solid lightcoral;
+}
+
+label {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+form {
+  width: 300px;
+}
+
+#success,
+#failure {
+  font-size: 1.2em;
+}
+
+#success {
+  color: darkblue;
+}
+
+#failure {
+  color: crimson;
+}
