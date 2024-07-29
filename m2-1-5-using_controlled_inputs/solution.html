@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Using Controlled Inputs</title>
+  <title>Using Controlled Inputs Solution</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/reset.css" />
   <link rel="stylesheet" href="./styles/index.css" />
@@ -16,29 +16,20 @@
   <div id="root"></div>
   <script type="text/babel">
     const { useState } = React
-    // PROBLEM 1 - Make the text inputs controlled by adding a `value` prop (first one is done for you)
-
-    // PROBLEM 2 - If the input is "upper", then call `toUpperCase` on the value pulled from the event object,
-    // and set it in state. You will know it works because typing on the input box always displays UPPERCASE TEXT.
-
-    // PROBLEM 3 - If the input is "lower", then call `toLowerCase` on the value pulled from the event object,
-    // and set it in state. You will know it works because typing on the input box always displays lowercase text.
-
-    // PROBLEM 4 - If the input is "trimmed", then call `trim` on the value pulled from the event object,
-    // and set it in state. You will know it works because it won't be possible to type whitespace (space bar)
-    // into this input box.
-
     function App() {
       let [values, setValues] = useState({ upper: '', lower: '', trimmed: '' })
       const handleChange = event => {
-        // 2, 3, 4 - obtain also the value from the target of the event
-        let { name } = event.target
+        // 2, 3, 4 - obtain name and value from the target of the event
+        let { name, value } = event.target
         if (name === 'upper') {
           // 2- Set the value turned to upper case into state
+          setValues({ ...values, upper: value.toUpperCase() })
         } else if (name === 'lower') {
           // 3- Set the value turned to lower case into state
+          setValues({ ...values, lower: value.toLowerCase() })
         } else if (name === 'trimmed') {
           // 4- Set the value trimmed of any leading or trailing whitespace into state
+          setValues({ ...values, trimmed: value.trim() })
         }
       }
       return (
@@ -55,6 +46,7 @@
           <div>
             {/* 1- make this input controlled */}
             <label>Lower <input
+              value={values.lower}
               name="lower"
               type="text"
               placeholder="Type text"
@@ -64,6 +56,7 @@
           <div>
             {/* 1- make this input controlled */}
             <label>Trimmed <input
+              value={values.trimmed}
               name="trimmed"
               type="text"
               placeholder="Type text"
