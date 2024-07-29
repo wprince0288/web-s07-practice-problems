@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Changing Form Values</title>
+  <title>Changing Form Values Solution</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/reset.css" />
   <link rel="stylesheet" href="./styles/index.css" />
@@ -16,19 +16,18 @@
   <div id="root"></div>
   <script type="text/babel">
     const { useState } = React
-    // PROBLEM 1 - Create `username` and `password` states to store the input values
-
-    // PROBLEM 2 - Wire `changeUsername` and `changePassword` to their inputs using an `onChange` prop
-
-    // PROBLEM 3 - Implement `changeUsername` and `changePassword` so state is updated on every change
     function App() {
-      let username // 1- use the state hook to create this state
-      let password // 1- use the state hook to create this state
+      let [username, setUsername] = useState('') // 1- use the state hook to create this state
+      let [password, setPassword] = useState('') // 1- use the state hook to create this state
       const changeUsername = event => {
         // 3- Implement the change handler
+        let { value } = event.target
+        setUsername(value)
       }
       const changePassword = event => {
         // 3- Implement the change handler
+        let { value } = event.target
+        setPassword(value)
       }
       return (
         <form>
@@ -36,6 +35,7 @@
             <label htmlFor="fname">Username </label><br />
             {/* 2- this input needs an `onChange` */}
             <input
+              onChange={changeUsername}
               id="fname"
               type="text"
               placeholder="Type Username"
@@ -48,6 +48,7 @@
             <label htmlFor="password">Password </label><br />
             {/* 2- this input needs an `onChange` */}
             <input
+              onChange={changePassword}
               id="lname"
               type="password"
               placeholder="Type password"
@@ -59,7 +60,6 @@
           <div>
             <input type="submit" />
           </div>
-          <p>Check the solution in App(solution).jsx</p>
         </form>
       )
     }
