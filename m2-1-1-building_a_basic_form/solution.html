@@ -15,48 +15,40 @@
 <body>
   <div id="root"></div>
   <script type="text/babel">
-    // Follow the instructions in each problem to update the form code below.
-
-    // PROBLEM 1 - Associate correctly each label to its input
-
-    // PROBLEM 2 - Give the inputs some placeholder text
-
-    // PROBLEM 3 - Make the username have a max length of 10 characters
-
-    // PROBLEM 4 - Make the password have a min length of 8 characters
-
-    // PROBLEM 5 - Have the password input be of type password instead of text
-
     function App() {
       return (
         <form>
           <div>
-            <label>Username </label><br />
+            <label htmlFor="username">Username </label><br />
             <input
               id="username"
               type="text"
+              placeholder="Type Username"
+              maxLength={10}
             />
           </div>
 
           <div>
-            <label>Password </label><br />
+            <label htmlFor="password">Password </label><br />
             <input
               id="password"
-              type="text"
+              type="password"
+              placeholder="Type password"
+              minLength={8}
             />
           </div>
 
           <div>
-            <label>Bio </label><br />
+            <label htmlFor="bio">Bio </label><br />
             <textarea
               id="bio"
+              placeholder="Type Bio"
             />
           </div>
 
           <div>
             <input type="submit" />
           </div>
-          <p>Check the solution in App(solution).jsx</p>
         </form>
       )
     }
