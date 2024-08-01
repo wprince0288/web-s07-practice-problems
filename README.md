@@ -15,7 +15,10 @@ Each subfolder inside this project corresponds to a **Learning Objective** in yo
 1. Open the repository folder in VSCode.
 2. Locate the subfolder containing the practice problems you wish to work on.
 3. If the subfolder contains `index.html` and `solution.html` files, edit them in VSCode and run them using Live Server.
-4. If the subfolder contains an `app` folder, `cd` into it and run `npm install && npm run dev` in order to run.
+4. If the subfolder contains an `app` folder:
+    - cd` into it and run `npm install && npm run dev` in order to run.
+    - work inside `app/frontend/components/App.js`
+    - find the solution inside `app/frontend/components/AppSolution.js`
 
 **If you get stuck:**
 
