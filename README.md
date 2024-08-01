@@ -1,10 +1,27 @@
 # Sprint 7 Practice Problems
 
-## Instructions
+## Intro
 
-Each folder inside this repository corresponds to a **Learning Objective** in your learning platform.
+Each subfolder inside this project corresponds to a **Learning Objective** in your learning platform, and includes an `index.html` file containing practice problems and a `solution.html` file containing the solutions.
 
-## Index
+## Setup Instructions
+
+1. To watch a video demonstration of these instructions, click [HERE](https://bloomtech-1.wistia.com/medias/k4rcg5le7z).
+2. Fork this repository and clone it to a location in your computer you can find easily.
+3. Install the [Live Server extension for VSCode](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
+
+**In order to work on a particular set of practice problems:**
+
+1. Open the repository folder in VSCode.
+2. Locate the subfolder containing the practice problems you wish to work on.
+3. If the subfolder contains only `index.html` and `solution.html` files, edit in VSCode and run them using Live Server.
+4. If the subfolder contains an `app` folder, `cd` into it and run `npm install && npm run dev`.
+
+**If you get stuck:**
+
+1. Check the `solution.html` file for the practice problems you are working on.
+
+## Index of Problems
 
 ### Module 1 - React Router
 
