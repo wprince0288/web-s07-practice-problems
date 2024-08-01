@@ -56,11 +56,15 @@
           <div>
             <input type="submit" />
           </div>
-          <p>Check the solution in App(solution).jsx</p>
         </form>
       )
     }
     ReactDOM.createRoot(document.getElementById('root')).render(<App />)
+  </script>
+  <script>
+    const footer = document.createElement('footer')
+    footer.textContent = `© BLOOM INSTITUTE OF TECHNOLOGY ${new Date().getFullYear()}`
+    document.querySelector('#root').insertAdjacentElement('afterEnd', footer)
   </script>
 </body>
 
