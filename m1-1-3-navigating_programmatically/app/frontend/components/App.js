@@ -14,12 +14,13 @@ const Careers = () => <h3>This is the Careers page</h3>
 const Blog = () => <h3>This is the Blog page</h3>
 
 export default function App() {
+  const navigate = useNavigate()
   return (
     <div>
       <nav>
-        <button>Home</button>
-        <button>Careers</button>
-        <button>Blog</button>
+        <button>onClick{() navigate("/")}Home</button>
+        <button>onClick{() navigate("careers")}</button>
+        <button>onClick{() navigate("blog")}Blog</button>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
